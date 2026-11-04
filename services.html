@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dermatology and Aesthetic Services by Dr. Vimi Padhiyar. Medical skin care, hair restoration, chemical peels, and laser treatments.">
+  <title>Services & Treatments | Dr. Vimi Padhiyar Dermatology</title>
+
+  <!-- Google Fonts: Playfair Display & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Dr. Vimi Padhiyar Home">
+        <div class="brand-info">
+          <span class="brand-name">Dr. Vimi Padhiyar</span>
+          <span class="brand-title">
+            <span class="brand-title-dash"></span>
+            Dermatologist
+          </span>
+        </div>
+      </a>
+
+      <nav class="nav-wrapper" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-action">
+        <button type="button" class="btn-primary" data-open-modal="booking">
+          <span>Book Appointment</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        <button type="button" class="mobile-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-menu-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About Dr. Vimi</a></li>
+      <li><a href="services.html" class="nav-link active">Clinical & Aesthetic Services</a></li>
+      <li><a href="contact.html" class="nav-link">Contact & Clinic Hours</a></li>
+    </ul>
+    <button type="button" class="btn-cta-primary" data-open-modal="booking" style="width: 100%; justify-content: center;">
+      <span>Book Consultation</span>
+    </button>
+  </aside>
+
+  <!-- Main Content -->
+  <main style="padding: clamp(3rem, 5vw, 5rem) 0;">
+    <div class="container">
+      
+      <!-- Page Header -->
+      <div style="text-align: center; max-width: 720px; margin: 0 auto 4rem;">
+        <div class="hero-kicker">
+          <span>CLINICAL & AESTHETIC SPECTRUM</span>
+        </div>
+        <h1 style="font-family: var(--font-heading); font-size: clamp(2.5rem, 4.5vw, 3.5rem); color: var(--text-charcoal); line-height: 1.15; margin-bottom: 1rem;">
+          Specialized Treatments for <br><span style="color: var(--accent-terracotta); font-style: italic;">Skin, Hair & Nails</span>
+        </h1>
+        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">
+          Every skin journey is unique. Under Dr. Vimi Padhiyar’s personalized guidance, you receive scientifically formulated medical and aesthetic solutions designed to last.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+
+        <!-- Service 1 -->
+        <div style="background: #FFFFFF; border: 1px solid var(--color-beige); border-radius: var(--radius-lg); padding: 2.25rem; box-shadow: var(--shadow-sm);">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--secondary-peach); color: var(--accent-terracotta); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <i data-lucide="sparkles" style="width: 24px; height: 24px;"></i>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-green); margin-bottom: 0.6rem;">Acne & Acne Scar Remodeling</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.25rem;">
+            Customized medical management for active hormonal, cystic, or bacterial acne combined with subcision and microneedling RF for deep scars.
+          </p>
+          <ul style="list-style: none; font-size: 0.85rem; color: var(--text-charcoal); margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem;">
+            <li style="display: flex; align-items: center; gap: 8px;"><i data-lucide="check" style="width: 16px; color: var(--primary-green);"></i> Non-comedogenic prescription protocols</li>
+            <li style="display: flex; align-items: center; gap: 8px;"><i data-lucide="check" style="width: 16px; color: var(--primary-green);"></i> Post-inflammatory erythema (PIE) clearance</li>
+          </ul>
+          <button type="button" class="btn-primary" data-open-modal="booking" style="width: 100%; justify-content: center; padding: 0.7rem;">Book Consultation</button>
+        </div>
+
+        <!-- Service 2 -->
+        <div style="background: #FFFFFF; border: 1px solid var(--color-beige); border-radius: var(--radius-lg); padding: 2.25rem; box-shadow: var(--shadow-sm);">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(48, 70, 55, 0.1); color: var(--primary-green); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <i data-lucide="sun" style="width: 24px; height: 24px;"></i>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-green); margin-bottom: 0.6rem;">Melasma & Pigmentation Reversal</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.25rem;">
+            Targeted dermatological peels and Q-switched laser therapies targeting stubborn epidermal and dermal pigmentation.
+          </p>
+          <ul style="list-style: none; font-size: 0.85rem; color: var(--text-charcoal); margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem;">
+            <li style="display: flex; align-items: center; gap: 8px;"><i data-lucide="check" style="width: 16px; color: var(--primary-green);"></i> Even skin tone and sunspot clearance</li>
+            <li style="display: flex; align-items: center; gap: 8px;"><i data-lucide="check" style="width: 16px; color: var(--primary-green);"></i> Safe for melanin-rich Indian skin types</li>
+          </ul>
+          <button type="button" class="btn-primary" data-open-modal="booking" style="width: 100%; justify-content: center; padding: 0.7rem;">Book Consultation</button>
+        </div>
+
+        <!-- Service 3 -->
+        <div style="background: #FFFFFF; border: 1px solid var(--color-beige); border-radius: var(--radius-lg); padding: 2.25rem; box-shadow: var(--shadow-sm);">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--secondary-peach); color: var(--accent-terracotta); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <i data-lucide="feather" style="width: 24px; height: 24px;"></i>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-green); margin-bottom: 0.6rem;">PRP & GFC Hair Restoration</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.25rem;">
+            Advanced autologous growth factor concentrate injections to revitalize dormant follicles and arrest genetic hair thinning.
+          </p>
+          <ul style="list-style: none; font-size: 0.85rem; color: var(--text-charcoal); margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem;">
+            <li style="display: flex; align-items: center; gap: 8px;"><i data-lucide="check" style="width: 16px; color: var(--primary-green);"></i> High-density platelet concentration</li>
+            <li style="display: flex; align-items: center; gap: 8px;"><i data-lucide="check" style="width: 16px; color: var(--primary-green);"></i> Scalp trichoscopic root mapping</li>
+          </ul>
+          <button type="button" class="btn-primary" data-open-modal="booking" style="width: 100%; justify-content: center; padding: 0.7rem;">Book Consultation</button>
+        </div>
+
+        <!-- Service 4 -->
+        <div style="background: #FFFFFF; border: 1px solid var(--color-beige); border-radius: var(--radius-lg); padding: 2.25rem; box-shadow: var(--shadow-sm);">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(48, 70, 55, 0.1); color: var(--primary-green); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <i data-lucide="heart" style="width: 24px; height: 24px;"></i>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-green); margin-bottom: 0.6rem;">Anti-Aging & Collagen Remodeling</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.25rem;">
+            Subtle, natural facial harmonization targeting fine lines, nasolabial folds, and skin laxity while preserving facial expressions.
+          </p>
+          <ul style="list-style: none; font-size: 0.85rem; color: var(--text-charcoal); margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem;">
+            <li style="display: flex; align-items: center; gap: 8px;"><i data-lucide="check" style="width: 16px; color: var(--primary-green);"></i> Micro-botox & skin boosters</li>
+            <li style="display: flex; align-items: center; gap: 8px;"><i data-lucide="check" style="width: 16px; color: var(--primary-green);"></i> Bio-remodeling injections</li>
+          </ul>
+          <button type="button" class="btn-primary" data-open-modal="booking" style="width: 100%; justify-content: center; padding: 0.7rem;">Book Consultation</button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       Site Footer (Universal Clinical Botanical Design)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <!-- Subtle Botanical Leaf Watermark -->
+    <svg class="footer-watermark" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M170 330 C170 240 220 180 320 150 C230 140 180 80 170 10 C160 80 110 140 20 150 C120 180 170 240 170 330 Z" stroke="#E9D5C3" stroke-width="1.2" opacity="0.6"/>
+      <path d="M170 20 L170 320" stroke="#E9D5C3" stroke-width="1" opacity="0.5"/>
+      <path d="M170 90 Q220 70 270 95" stroke="#E9D5C3" stroke-width="1" opacity="0.5"/>
+      <path d="M170 140 Q240 130 295 160" stroke="#E9D5C3" stroke-width="1" opacity="0.5"/>
+      <path d="M170 190 Q235 190 280 230" stroke="#E9D5C3" stroke-width="1" opacity="0.5"/>
+      <path d="M170 240 Q215 250 245 285" stroke="#E9D5C3" stroke-width="1" opacity="0.5"/>
+      <path d="M170 90 Q120 70 70 95" stroke="#E9D5C3" stroke-width="1" opacity="0.5"/>
+      <path d="M170 140 Q100 130 45 160" stroke="#E9D5C3" stroke-width="1" opacity="0.5"/>
+      <path d="M170 190 Q105 190 60 230" stroke="#E9D5C3" stroke-width="1" opacity="0.5"/>
+      <path d="M170 240 Q125 250 95 285" stroke="#E9D5C3" stroke-width="1" opacity="0.5"/>
+    </svg>
+
+    <div class="container footer-inner">
+      <div class="footer-main-row">
+        
+        <!-- Brand Column (No Logo Yet) -->
+        <div class="footer-col-brand">
+          <span class="brand-name">Dr. Vimi Padhiyar</span>
+          <span class="brand-subtitle">— Dermatologist —</span>
+        </div>
+
+        <!-- Vertical Hairline Divider -->
+        <div class="footer-v-divider" aria-hidden="true"></div>
+
+        <!-- Quick Links -->
+        <div class="footer-col footer-col-links">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Our Services -->
+        <div class="footer-col footer-col-services">
+          <h4 class="footer-heading">Our Services</h4>
+          <ul class="footer-nav-list">
+            <li><a href="services.html">Skin Care</a></li>
+            <li><a href="services.html">Hair Care</a></li>
+            <li><a href="services.html">Cosmetic Dermatology</a></li>
+            <li><a href="services.html">Nail Care</a></li>
+          </ul>
+        </div>
+
+        <!-- Get in Touch -->
+        <div class="footer-col footer-col-contact">
+          <h4 class="footer-heading">Get in Touch</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+            </li>
+            <li class="footer-contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:info@drvimipadhiyar.com">info@drvimipadhiyar.com</a>
+            </li>
+            <li class="footer-contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Valsad, Gujarat</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Vertical Hairline Divider -->
+        <div class="footer-v-divider" aria-hidden="true"></div>
+
+        <!-- Follow Us -->
+        <div class="footer-col footer-col-social">
+          <h4 class="footer-heading">Follow Us</h4>
+          <div class="footer-social-row">
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33zM9.75 15.02l5.75-3.27-5.75-3.27v6.54z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Horizontal Hairline Divider -->
+      <hr class="footer-bottom-divider">
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copyright">&copy; 2025 Dr. Vimi Padhiyar. All rights reserved.</p>
+        <p class="footer-tagline">Healthy Skin. Confident You.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Appointment Modal -->
+  <div id="bookingModal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button type="button" id="closeBookingModal" class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div class="modal-header">
+        <span class="modal-badge">Consultation</span>
+        <h2 class="modal-title">Book an Appointment</h2>
+      </div>
+      <form id="appointmentForm">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" id="patientName" class="form-control" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Phone *</label>
+            <input type="tel" id="patientPhone" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Date *</label>
+            <input type="date" id="appointmentDate" class="form-control" required>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit-booking">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="appointmentToast" class="toast-notice">
+    <div><div class="toast-msg">Thank you! Your appointment request has been scheduled.</div></div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>
