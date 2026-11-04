@@ -1888,6 +1888,15 @@ button {
   letter-spacing: -0.015em;
 }
 
+.banner-title-line-1,
+.banner-title-line-2 {
+  display: inline;
+}
+
+.banner-title-line-3 {
+  display: block;
+}
+
 .consultation-banner-desc {
   font-family: var(--font-body);
   color: rgba(250, 245, 239, 0.85);
@@ -2674,8 +2683,8 @@ button {
   .hero-grid {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: stretch;
+    text-align: left;
     gap: 1.25rem;
     width: 100%;
   }
@@ -2687,7 +2696,9 @@ button {
   .hero-kicker {
     order: 1;
     margin-bottom: 0.5rem;
-    justify-content: center;
+    justify-content: flex-start;
+    align-self: flex-start;
+    text-align: left;
   }
 
   .hero-title {
@@ -2695,14 +2706,22 @@ button {
     margin-bottom: 0.75rem;
     font-size: clamp(2rem, 7vw, 2.5rem);
     line-height: 1.2;
-    text-align: center;
+    text-align: left;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  .hero-title .heading-line {
+    text-align: left;
   }
 
   .hero-credentials {
     order: 3;
     margin-bottom: 1.25rem;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    align-self: flex-start;
+    text-align: left;
+    width: 100%;
   }
 
   /* Hero Image placed after heading & credentials */
@@ -3098,5 +3117,68 @@ button {
     padding: 0.65rem 1.6rem;
     font-size: 0.9rem;
     box-shadow: 0 4px 12px rgba(48, 70, 55, 0.08);
+  }
+
+  /* 5. Consultation Banner Mobile Optimization:
+        - Badge in single line
+        - Heading in exactly 3 lines
+        - No description text & no timing meta (badge, heading, then Direct Scheduling card)
+        - Increased Direct Scheduling card width (full width) */
+  .consultation-banner-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 2rem 1.25rem;
+    border-radius: 24px;
+  }
+
+  .consultation-banner-info {
+    max-width: 100%;
+  }
+
+  .consultation-banner-badge {
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center;
+    font-size: clamp(0.68rem, 2.7vw, 0.74rem);
+    padding: 0.35rem 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .consultation-banner-title {
+    font-size: clamp(1.85rem, 6.5vw, 2.25rem);
+    line-height: 1.22;
+    margin-bottom: 1.35rem;
+    text-align: left;
+  }
+
+  .banner-title-line-1,
+  .banner-title-line-2,
+  .banner-title-line-3 {
+    display: block !important;
+  }
+
+  /* No text, no timing on mobile */
+  .consultation-banner-desc {
+    display: none !important;
+  }
+
+  .consultation-banner-meta {
+    display: none !important;
+  }
+
+  /* Increased Direct Scheduling card width */
+  .consultation-banner-action {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .scheduling-inner-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1.6rem 1.3rem;
+    border-radius: 20px;
+    box-sizing: border-box;
   }
 }
