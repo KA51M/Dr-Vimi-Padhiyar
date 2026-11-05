@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScrollLinks();
   initBentoBeforeAfterSlider();
   initScrollRevealAnimations();
+  initServicesFilter();
 });
 
 /* --------------------------------------------------------------------------
@@ -433,4 +434,118 @@ function initScrollRevealAnimations() {
 
   reveals.forEach(el => observer.observe(el));
 }
+
+/* --------------------------------------------------------------------------
+   Services Catalog: Dynamic Real-Time Search & Category Filtering
+   -------------------------------------------------------------------------- */
+function initServicesFilter() {
+  const searchInput = document.getElementById('serviceSearchInput');
+  const searchClear = document.getElementById('serviceSearchClear');
+  const filterBtns = document.querySelectorAll('.service-filter-btn');
+  const cards = document.querySelectorAll('.service-card');
+  const emptyState = document.getElementById('servicesEmptyState');
+  const resetBtn = document.getElementById('btnResetFilters');
+
+  if (!cards.length) return;
+
+  let activeCategory = 'all';
+  let searchQuery = '';
+
+  function applyFilter() {
+    let visibleCount = 0;
+    const q = searchQuery.toLowerCase().trim();
+
+    cards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category');
+      const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+      const title = (card.querySelector('.service-card-title')?.textContent || '').toLowerCase();
+      const desc = (card.querySelector('.service-card-desc')?.textContent || '').toLowerCase();
+
+      const matchesCategory = (activeCategory === 'all' || cardCategory === activeCategory);
+      const matchesSearch = !q || keywords.includes(q) || title.includes(q) || desc.includes(q);
+
+      if (matchesCategory && matchesSearch) {
+        card.style.display = 'flex';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+        card.style.opacity = '0';
+      }
+    });
+
+    if (emptyState) {
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  // Live Search Input Listener
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      if (searchClear) {
+        searchClear.style.display = searchQuery.length > 0 ? 'flex' : 'none';
+      }
+      applyFilter();
+    });
+
+    // Clear Search on Escape
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        searchQuery = '';
+        if (searchClear) searchClear.style.display = 'none';
+        applyFilter();
+      }
+    });
+  }
+
+  // Clear Button Click
+  if (searchClear) {
+    searchClear.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        searchInput.focus();
+      }
+      searchQuery = '';
+      searchClear.style.display = 'none';
+      applyFilter();
+    });
+  }
+
+  // Category Filter Buttons
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      activeCategory = btn.getAttribute('data-category') || 'all';
+      applyFilter();
+    });
+  });
+
+  // Reset All Filters Button
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      searchQuery = '';
+      if (searchClear) searchClear.style.display = 'none';
+      activeCategory = 'all';
+
+      filterBtns.forEach(b => {
+        const isAll = b.getAttribute('data-category') === 'all';
+        b.classList.toggle('active', isAll);
+        b.setAttribute('aria-selected', isAll ? 'true' : 'false');
+      });
+
+      applyFilter();
+      if (searchInput) searchInput.focus();
+    });
+  }
+}
+
 

@@ -16,3 +16,8 @@ ehthumbs_vista.db
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# Scratch & Temporary Testing files
+scratch/
+*.tmp
+
