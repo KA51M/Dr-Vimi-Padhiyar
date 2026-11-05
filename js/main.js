@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroParallax();
   initSmoothScrollLinks();
   initBentoBeforeAfterSlider();
+  initScrollRevealAnimations();
 });
 
 /* --------------------------------------------------------------------------
@@ -71,7 +72,7 @@ function initMobileMenu() {
 }
 
 /* --------------------------------------------------------------------------
-   3. Animated Numerical Data Counters
+   3. Animated Numerical Data Counters (High-Performance Zero-Lag)
    -------------------------------------------------------------------------- */
 function initCounterAnimations() {
   const counters = document.querySelectorAll('.counter-val');
@@ -86,39 +87,52 @@ function initCounterAnimations() {
     counters.forEach(counter => {
       const target = parseFloat(counter.getAttribute('data-target'));
       const isDecimal = counter.getAttribute('data-decimal') === 'true';
-      const duration = 1800; // ms
+      const duration = 1200; // Snappy 1.2s duration to prevent scroll-drag stalls
       const startTime = performance.now();
+      let lastVal = '';
 
       const updateCounter = (currentTime) => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
         
-        // Ease out quad
-        const easeOut = 1 - (1 - progress) * (1 - progress);
+        // Quartic ease out: snappy ramp up, buttery smooth deceleration
+        const easeOut = 1 - Math.pow(1 - progress, 4);
         const currentVal = easeOut * target;
 
-        if (isDecimal) {
-          counter.textContent = currentVal.toFixed(1);
-        } else {
-          counter.textContent = Math.floor(currentVal).toLocaleString();
+        // Throttled DOM updates: only mutate DOM when the formatted text changes
+        const displayVal = isDecimal 
+          ? currentVal.toFixed(1) 
+          : Math.floor(currentVal).toLocaleString();
+
+        if (displayVal !== lastVal) {
+          counter.textContent = displayVal;
+          lastVal = displayVal;
         }
 
         if (progress < 1) {
           requestAnimationFrame(updateCounter);
         } else {
-          if (isDecimal) {
-            counter.textContent = target.toFixed(1);
-          } else {
-            counter.textContent = target.toLocaleString();
-          }
+          // Guarantee exact target value
+          counter.textContent = isDecimal ? target.toFixed(1) : target.toLocaleString();
         }
       };
 
       requestAnimationFrame(updateCounter);
+
+      // Safety fallback: if scrolling or gesture throttling pauses rAF, guarantee completion
+      setTimeout(() => {
+        counter.textContent = isDecimal ? target.toFixed(1) : target.toLocaleString();
+      }, duration + 150);
     });
   };
 
-  // Trigger on load or when entering viewport
+  // Immediate start if hero is already in viewport on page load
+  if (window.scrollY < 400) {
+    setTimeout(animateNumbers, 250);
+    return;
+  }
+
+  // Trigger when entering viewport
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -127,7 +141,7 @@ function initCounterAnimations() {
           observer.disconnect();
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
 
     const statsWrap = document.querySelector('.hero-stats-wrap');
     if (statsWrap) {
@@ -255,7 +269,7 @@ function initHeroParallax() {
   const badges = document.querySelectorAll('.floating-badge');
   if (!hero || !archContainer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  if (window.innerWidth < 1024) return;
+  if (window.innerWidth < 1024 || 'ontouchstart' in window || navigator.maxTouchPoints > 0) return;
 
   let targetX = 0, targetY = 0;
   let currentX = 0, currentY = 0;
@@ -390,3 +404,33 @@ function initBentoBeforeAfterSlider() {
     isPointerDown = false;
   });
 }
+
+/* --------------------------------------------------------------------------
+   Scroll Reveal Animations (IntersectionObserver with unobserve for zero lag)
+   -------------------------------------------------------------------------- */
+function initScrollRevealAnimations() {
+  const reveals = document.querySelectorAll('.reveal-on-scroll, .reveal-scale');
+  if (!reveals.length) return;
+
+  // Graceful fallback if IntersectionObserver is not supported
+  if (!('IntersectionObserver' in window)) {
+    reveals.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        obs.unobserve(entry.target); // Detach immediately for 60-120fps buttery performance
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.05,
+    rootMargin: '0px 0px -10px 0px'
+  });
+
+  reveals.forEach(el => observer.observe(el));
+}
+
