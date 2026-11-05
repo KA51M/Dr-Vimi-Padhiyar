@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initAppointmentModal();
   initVideoModal();
   initHeroParallax();
+  initSmoothScrollLinks();
+  initBentoBeforeAfterSlider();
 });
 
 /* --------------------------------------------------------------------------
@@ -293,4 +295,98 @@ function initHeroParallax() {
       isMoving = false;
     }
   }
+}
+
+/* --------------------------------------------------------------------------
+   7. In-Page Smooth Scroll Links (e.g. Know More button)
+   -------------------------------------------------------------------------- */
+function initSmoothScrollLinks() {
+  const knowMoreBtn = document.getElementById('aboutKnowMoreBtn');
+  if (knowMoreBtn) {
+    knowMoreBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById('about-story');
+      if (target) {
+        const headerOffset = 80;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Bento Before & After Interactive Slider (Smooth Drag & Reveal)
+   -------------------------------------------------------------------------- */
+function initBentoBeforeAfterSlider() {
+  const card = document.querySelector('.bento-card--before-after');
+  if (!card) return;
+
+  const stage = card.querySelector('.ba-comparison-stage');
+  const beforeLayer = card.querySelector('.ba-before-layer');
+  const line = card.querySelector('.bento-slider-line');
+  const rangeInput = card.querySelector('.ba-range-slider');
+  if (!stage || !beforeLayer || !line) return;
+
+  const setPosition = (percent) => {
+    const clamped = Math.max(5, Math.min(95, percent));
+    beforeLayer.style.clipPath = `inset(0 calc(100% - ${clamped}%) 0 0)`;
+    line.style.left = `${clamped}%`;
+    if (rangeInput && Math.abs(rangeInput.value - clamped) > 0.5) {
+      rangeInput.value = clamped;
+    }
+  };
+
+  // 1. Native Range Input (Accessible, Drag, Touch & Click)
+  if (rangeInput) {
+    rangeInput.addEventListener('input', (e) => {
+      setPosition(parseFloat(e.target.value));
+    });
+  }
+
+  // 2. Direct Stage Pointer Events (Smooth Mouse & Touch Drag)
+  let isPointerDown = false;
+
+  const handlePointer = (clientX) => {
+    const rect = stage.getBoundingClientRect();
+    if (rect.width <= 0) return;
+    const x = clientX - rect.left;
+    const percent = (x / rect.width) * 100;
+    setPosition(percent);
+  };
+
+  stage.addEventListener('mousedown', (e) => {
+    isPointerDown = true;
+    handlePointer(e.clientX);
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isPointerDown) return;
+    handlePointer(e.clientX);
+  });
+
+  window.addEventListener('mouseup', () => {
+    isPointerDown = false;
+  });
+
+  stage.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches[0]) {
+      isPointerDown = true;
+      handlePointer(e.touches[0].clientX);
+    }
+  }, { passive: true });
+
+  stage.addEventListener('touchmove', (e) => {
+    if (isPointerDown && e.touches && e.touches[0]) {
+      handlePointer(e.touches[0].clientX);
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => {
+    isPointerDown = false;
+  });
 }
