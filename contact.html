@@ -24,7 +24,7 @@
     <div class="container nav-container">
       <!-- Brand Logo -->
       <a href="index.html" class="brand-logo" aria-label="Dr. Vimi Padhiyar Home">
-        <img src="images/logo.png" alt="Dr. Vimi Padhiyar Logo" class="site-nav-logo" width="54" height="50">
+        <img src="images/logo.png" alt="Dr. Vimi Padhiyar Logo" class="site-nav-logo" width="68" height="62">
         <span class="brand-name">Dr. Vimi Padhiyar</span>
       </a>
 
@@ -38,12 +38,12 @@
       </nav>
 
       <div class="header-action">
-        <button type="button" class="btn-primary" data-open-modal="booking">
+        <a href="https://wa.me/917990623774?text=Hello%20Dr.%20Vimi%20Padhiyar%2C%20I%20would%20like%20to%20book%20a%20consultation%20appointment." target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Book Appointment on WhatsApp">
           <span>Book Appointment</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
           </svg>
-        </button>
+        </a>
         <button type="button" class="mobile-toggle" aria-label="Toggle navigation">
           <span></span><span></span><span></span>
         </button>
@@ -62,112 +62,310 @@
   </aside>
 
   <!-- Main Content -->
-  <main style="padding: clamp(3rem, 6vw, 5rem) 0;">
+  <main class="contact-page-main">
     <div class="container">
       
-      <div style="text-align: center; max-width: 650px; margin: 0 auto 3.5rem;">
-        <div class="hero-kicker">
-          <span>GET IN TOUCH</span>
+      <!-- Beautiful & Compact Top Header (No Images, Pure CSS & Vector Accents) -->
+      <div class="contact-hero-wrap">
+        <div class="contact-hero-inner">
+          <div class="contact-kicker-pill anim-fade-up anim-d-0">
+            <span class="kicker-pulse-dot" aria-hidden="true"></span>
+            <span class="contact-kicker-text">GET IN TOUCH</span>
+            <svg class="contact-kicker-leaf" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M11 20A7 7 0 0 1 4 13C4 8 9 3 20 2c0 11-5 16-9 18Z"/>
+              <path d="M4 13c7 0 11-4 13-11"/>
+            </svg>
+          </div>
+          
+          <h1 class="contact-hero-title anim-fade-up anim-d-1">
+            Let's Take Care<br>
+            <span class="contact-title-accent">
+              of Your Skin
+              <svg class="contact-title-curve" viewBox="0 0 140 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M2 7C45 2 95 2 138 7" stroke="var(--accent-terracotta)" stroke-width="2.6" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </h1>
+
+          <p class="contact-hero-desc anim-fade-up anim-d-2">
+            We look forward to welcoming you. Please fill out the form or reach out directly for priority appointments.
+          </p>
+
+          <div class="contact-hero-pills anim-fade-up anim-d-3">
+            <span class="contact-trust-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Priority Scheduling
+            </span>
+            <span class="contact-trust-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Mon – Sat: 10AM – 7:30PM
+            </span>
+            <span class="contact-trust-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/></svg>
+              Valsad, Gujarat
+            </span>
+          </div>
         </div>
-        <h1 style="font-family: var(--font-heading); font-size: clamp(2.5rem, 4.5vw, 3.5rem); color: var(--text-charcoal); line-height: 1.15; margin-bottom: 1rem;">
-          Visit the Clinic or <br><span style="color: var(--accent-terracotta); font-style: italic;">Schedule a Visit</span>
-        </h1>
-        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">
-          We look forward to welcoming you. Please fill out the form or reach out directly for priority appointments.
-        </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 4vw, 4rem); align-items: start;" class="contact-grid">
+      <!-- Top Section: Contact Details & Compact Booking Form (Reordered on mobile via CSS) -->
+      <div class="contact-top-grid">
         
-        <!-- Clinic Details -->
-        <div>
-          <!-- Card 1 -->
-          <div style="background: #FFFFFF; border: 1px solid var(--color-beige); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 1.5rem; box-shadow: var(--shadow-sm);">
-            <div style="display: flex; gap: 14px;">
-              <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--secondary-peach); color: var(--accent-terracotta); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <i data-lucide="map-pin" style="width: 22px; height: 22px;"></i>
+        <!-- Left Column: Attractive Interactive Contact Cards (Rendered after form on mobile, 2 per row) -->
+        <div class="contact-details-col">
+          
+          <!-- Card 1: Call Us -->
+          <a href="tel:+918160014494" class="contact-detail-card anim-fade-up anim-d-3" aria-label="Call clinic at +91 81600 14494">
+            <div class="contact-card-left">
+              <div class="contact-card-icon icon-bg-phone">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
               </div>
-              <div>
-                <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--primary-green); margin-bottom: 0.35rem;">Clinic Location</h4>
-                <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">
-                  Suite 402, Elite Medical Arcade, Opposite Central Boulevard, Near Landmark Circle.
-                </p>
+              <div class="contact-card-texts">
+                <span class="contact-card-tag">Call Directly</span>
+                <span class="contact-card-title">+91 81600 14494</span>
+                <span class="contact-card-sub">Doctor & Helpline</span>
               </div>
             </div>
-          </div>
+            <div class="contact-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"/>
+                <polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </div>
+          </a>
 
-          <!-- Card 2 -->
-          <div style="background: #FFFFFF; border: 1px solid var(--color-beige); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 1.5rem; box-shadow: var(--shadow-sm);">
-            <div style="display: flex; gap: 14px;">
-              <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(48, 70, 55, 0.1); color: var(--primary-green); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <i data-lucide="phone-call" style="width: 22px; height: 22px;"></i>
+          <!-- Card 2: WhatsApp -->
+          <a href="https://wa.me/917990623774?text=Hello%20Dr.%20Vimi%20Padhiyar%2C%20I%20would%20like%20to%20inquire%20about%20a%20consultation." target="_blank" rel="noopener noreferrer" class="contact-detail-card anim-fade-up anim-d-4" aria-label="Chat with clinic on WhatsApp">
+            <div class="contact-card-left">
+              <div class="contact-card-icon icon-bg-whatsapp">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
               </div>
-              <div>
-                <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--primary-green); margin-bottom: 0.35rem;">Direct Assistance</h4>
-                <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">
-                  Phone: <strong>+91 98250 12345</strong><br>
-                  WhatsApp: <strong>+91 98250 54321</strong>
-                </p>
+              <div class="contact-card-texts">
+                <span class="contact-card-tag">
+                  <span class="tag-active-dot" aria-hidden="true"></span>
+                  Quick Support
+                </span>
+                <span class="contact-card-title">Chat on WhatsApp</span>
+                <span class="contact-card-sub">Instant Clinic Chat</span>
               </div>
             </div>
-          </div>
+            <div class="contact-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"/>
+                <polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </div>
+          </a>
 
-          <!-- Card 3 -->
-          <div style="background: #FFFFFF; border: 1px solid var(--color-beige); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm);">
-            <div style="display: flex; gap: 14px;">
-              <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--secondary-peach); color: var(--accent-terracotta); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <i data-lucide="clock" style="width: 22px; height: 22px;"></i>
+          <!-- Card 3: Email Us -->
+          <a href="mailto:info@drvimipadhiyar.com" class="contact-detail-card anim-fade-up anim-d-5" aria-label="Email clinic at info@drvimipadhiyar.com">
+            <div class="contact-card-left">
+              <div class="contact-card-icon icon-bg-email">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
               </div>
-              <div>
-                <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--primary-green); margin-bottom: 0.35rem;">Consultation Timings</h4>
-                <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">
-                  Monday – Saturday: 10:00 AM – 7:30 PM<br>
-                  Sunday: Emergency / Pre-booked only
-                </p>
+              <div class="contact-card-texts">
+                <span class="contact-card-tag">Email Us</span>
+                <span class="contact-card-title">info@drvimipadhiyar.com</span>
+                <span class="contact-card-sub">Online Consultation</span>
               </div>
             </div>
-          </div>
+            <div class="contact-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"/>
+                <polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Card 4: Clinic Address -->
+          <a href="https://maps.google.com/?q=Valsad,+Gujarat" target="_blank" rel="noopener noreferrer" class="contact-detail-card anim-fade-up anim-d-6" aria-label="Clinic Address in Valsad, Gujarat">
+            <div class="contact-card-left">
+              <div class="contact-card-icon icon-bg-address">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="contact-card-texts">
+                <span class="contact-card-tag">Visit Clinic</span>
+                <span class="contact-card-title">Clinic Address</span>
+                <span class="contact-card-sub">Valsad, Gujarat</span>
+              </div>
+            </div>
+            <div class="contact-card-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"/>
+                <polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </div>
+          </a>
+
         </div>
 
-        <!-- Direct Booking / Message Card -->
-        <div style="background: #FFFFFF; border: 1px solid var(--color-beige); border-radius: var(--radius-xl); padding: clamp(2rem, 4vw, 2.75rem); box-shadow: var(--shadow-md);">
-          <h3 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--primary-green); margin-bottom: 0.5rem;">Send an Inquiry</h3>
-          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.75rem;">Leave your contact details and our medical coordinator will respond promptly.</p>
+        <!-- Right Column: Compact Appointment Form Card -->
+        <div class="contact-form-card anim-scale-in anim-d-2">
+          <div class="contact-form-header anim-fade-up anim-d-3">
+            <h3 class="contact-form-title">Book an Appointment</h3>
+            <p class="contact-form-sub">We'll get back to you soon.</p>
+          </div>
 
-          <form id="contactPageForm">
-            <div class="form-group">
-              <label class="form-label" for="cName">Your Name *</label>
-              <input type="text" id="cName" class="form-control" placeholder="Aanya Sharma" required>
+          <form id="contactPageForm" class="contact-compact-form">
+            <!-- Name Field -->
+            <div class="contact-field-wrap anim-fade-up anim-d-3">
+              <input type="text" id="cName" class="contact-compact-input" placeholder="Your Name" required>
             </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="cPhone">Phone Number *</label>
-                <input type="tel" id="cPhone" class="form-control" placeholder="+91 98765 43210" required>
+            <!-- Phone & Email Fields -->
+            <div class="contact-compact-row anim-fade-up anim-d-4">
+              <div class="contact-field-wrap">
+                <input type="tel" id="cPhone" class="contact-compact-input" placeholder="Phone Number" required>
               </div>
-              <div class="form-group">
-                <label class="form-label" for="cEmail">Email Address</label>
-                <input type="email" id="cEmail" class="form-control" placeholder="name@example.com">
+              <div class="contact-field-wrap">
+                <input type="email" id="cEmail" class="contact-compact-input" placeholder="Email Address">
               </div>
             </div>
 
-            <div class="form-group">
-              <label class="form-label" for="cTreatment">Service Area</label>
-              <select id="cTreatment" class="form-control">
+            <!-- Service Selection -->
+            <div class="contact-field-wrap contact-select-wrap anim-fade-up anim-d-4">
+              <select id="cTreatment" class="contact-compact-input" required>
+                <option value="" disabled selected hidden>Select Service</option>
                 <option value="skin">Clinical Skin (Acne, Eczema, Psoriasis)</option>
                 <option value="glow">Aesthetic Glow & Chemical Peels</option>
                 <option value="hair">Hair Loss & PRP Solutions</option>
                 <option value="other">Other Consultation</option>
               </select>
+              <span class="contact-field-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
             </div>
 
-            <div class="form-group">
-              <label class="form-label" for="cMessage">Message</label>
-              <textarea id="cMessage" class="form-control" rows="4" placeholder="Tell us how we can help you..."></textarea>
+            <!-- Preferred Date -->
+            <div class="contact-field-wrap anim-fade-up anim-d-5">
+              <input type="text" id="cDate" class="contact-compact-input" placeholder="Preferred Date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+              <span class="contact-field-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </span>
             </div>
 
-            <button type="submit" class="btn-submit-booking">Send Consultation Request</button>
+            <!-- Message Field -->
+            <div class="contact-field-wrap anim-fade-up anim-d-5">
+              <textarea id="cMessage" class="contact-compact-input contact-compact-textarea" rows="2" placeholder="Your Message"></textarea>
+            </div>
+
+            <!-- Submit Button with Arrow -->
+            <button type="submit" class="contact-submit-btn anim-fade-up anim-d-6">
+              <span>Send Request</span>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
           </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row: 3 Compact Cards (Map, Find Us, FAQs) -->
+      <div class="contact-bottom-cards">
+        
+        <!-- Card 1: Map Location -->
+        <div class="contact-map-card contact-scroll-reveal delay-1">
+          <iframe 
+            class="contact-map-iframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14945.748530349887!2d72.9157297920364!3d20.612015383921827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be095f36e84d72b%3A0xc39c4a85faec647a!2sValsad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Clinic Location Map - Valsad, Gujarat">
+          </iframe>
+          <a href="https://maps.google.com/?q=Valsad,+Gujarat" target="_blank" rel="noopener noreferrer" class="contact-map-overlay-badge" aria-label="Open Valsad map in Google Maps">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Valsad, Gujarat &nearr;</span>
+          </a>
+        </div>
+
+        <!-- Card 2: Find Us Card with Plant Image -->
+        <div class="contact-find-card contact-scroll-reveal delay-2">
+          <div class="find-us-content">
+            <div class="find-us-top">
+              <h3 class="find-us-title">Find Us</h3>
+              <p class="find-us-location">Valsad, Gujarat</p>
+            </div>
+            <a href="https://maps.google.com/?q=Valsad,+Gujarat" target="_blank" rel="noopener noreferrer" class="find-us-btn">
+              <span>Get Directions</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+          <div class="find-us-img-wrap">
+            <img src="images/find-us.png" alt="Clinical Botanical" class="find-us-plant" width="90" height="155" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Card 3: FAQs with 2-Line Answers -->
+        <div class="contact-faqs-card contact-scroll-reveal delay-3">
+          <h3 class="faqs-heading">FAQs</h3>
+          <div class="contact-faqs-list">
+            
+            <!-- FAQ 1 -->
+            <div class="faq-card-item">
+              <button type="button" class="faq-card-trigger" aria-expanded="false">
+                <span>How often should I visit a dermatologist?</span>
+                <span class="faq-card-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-card-body">
+                <p class="faq-card-text">
+                  A preventative checkup is recommended once or twice a year, or promptly whenever you notice persistent breakouts, skin rashes, or changing moles.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-card-item">
+              <button type="button" class="faq-card-trigger" aria-expanded="false">
+                <span>Are dermatology treatments safe?</span>
+                <span class="faq-card-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-card-body">
+                <p class="faq-card-text">
+                  Yes, all clinical procedures are FDA-cleared and administered under strict medical protocols tailored specifically to your individual skin type and condition.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-card-item">
+              <button type="button" class="faq-card-trigger" aria-expanded="false">
+                <span>What should I do before my appointment?</span>
+                <span class="faq-card-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-card-body">
+                <p class="faq-card-text">
+                  Please arrive with clean, makeup-free skin, bring any current prescriptions or skincare products, and avoid harsh exfoliants for 48 hours beforehand.
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>
@@ -235,7 +433,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
-              <a href="tel:+919876543210">+91 98765 43210</a>
+              <a href="tel:+917990623774">+91 79906 23774</a>
             </li>
             <li class="footer-contact-row">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -333,19 +531,80 @@
   <script>
     if (window.lucide) lucide.createIcons();
     
-    // Contact form handler
+    // Contact form handler: Redirects directly to WhatsApp with prefilled message
     const contactForm = document.getElementById('contactPageForm');
     if (contactForm) {
       contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        const name = document.getElementById('cName') ? document.getElementById('cName').value.trim() : '';
+        const phone = document.getElementById('cPhone') ? document.getElementById('cPhone').value.trim() : '';
+        const email = document.getElementById('cEmail') ? document.getElementById('cEmail').value.trim() : '';
+        const treatmentSelect = document.getElementById('cTreatment');
+        const treatment = treatmentSelect && treatmentSelect.selectedIndex > 0 ? treatmentSelect.options[treatmentSelect.selectedIndex].text : '';
+        const date = document.getElementById('cDate') ? document.getElementById('cDate').value.trim() : '';
+        const msg = document.getElementById('cMessage') ? document.getElementById('cMessage').value.trim() : '';
+
+        let text = 'Hello Dr. Vimi Padhiyar, I would like to book a consultation appointment.';
+        if (name) text += '\nName: ' + name;
+        if (phone) text += '\nPhone: ' + phone;
+        if (email) text += '\nEmail: ' + email;
+        if (treatment) text += '\nConcern: ' + treatment;
+        if (date) text += '\nPreferred Date: ' + date;
+        if (msg) text += '\nNote: ' + msg;
+
+        const waUrl = 'https://wa.me/917990623774?text=' + encodeURIComponent(text);
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+
         const toast = document.getElementById('appointmentToast');
         if (toast) {
-          toast.querySelector('.toast-msg').textContent = "Thank you! We have received your inquiry and will contact you shortly.";
+          toast.querySelector('.toast-msg').textContent = "Thank you! Opening WhatsApp to send your appointment details.";
           toast.classList.add('show');
           setTimeout(() => toast.classList.remove('show'), 4500);
         }
         contactForm.reset();
       });
+    }
+
+    // FAQ Accordion Toggle Interaction
+    document.querySelectorAll('.faq-card-trigger').forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-card-item');
+        const isActive = item.classList.contains('active');
+
+        // Close all FAQ items
+        document.querySelectorAll('.faq-card-item').forEach((faq) => {
+          faq.classList.remove('active');
+          const btn = faq.querySelector('.faq-card-trigger');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle clicked item
+        if (!isActive) {
+          item.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Zero-Lag, Instant Scroll Reveal Observer for Bottom Section
+    const scrollRevealCards = document.querySelectorAll('.contact-scroll-reveal');
+    if (scrollRevealCards.length) {
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.01,
+          rootMargin: '0px 0px 80px 0px' // Reveals 80px before entering viewport = zero perceived lag on mobile
+        });
+        scrollRevealCards.forEach(card => observer.observe(card));
+      } else {
+        scrollRevealCards.forEach(card => card.classList.add('is-revealed'));
+      }
     }
   </script>
 </body>

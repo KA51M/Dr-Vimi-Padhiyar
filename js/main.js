@@ -164,43 +164,80 @@ function initAppointmentModal() {
   const closeBtn = document.getElementById('closeBookingModal');
   const form = document.getElementById('appointmentForm');
   const toast = document.getElementById('appointmentToast');
+  const WHATSAPP_PHONE = '917990623774';
 
-  if (!modal) return;
+  const openWhatsAppDirect = (customMsg) => {
+    const defaultMsg = 'Hello Dr. Vimi Padhiyar, I would like to book a consultation appointment.';
+    const msg = customMsg || defaultMsg;
+    const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   const openModal = () => {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
   };
 
   const closeModal = () => {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
   };
 
+  // If any button has data-open-modal="booking", redirect directly to WhatsApp with appropriate message
   openButtons.forEach(btn => btn.addEventListener('click', (e) => {
+    // If it's an anchor with an href pointing to wa.me, allow native navigation
+    if (btn.tagName === 'A' && btn.getAttribute('href') && btn.getAttribute('href').includes('wa.me')) {
+      return;
+    }
     e.preventDefault();
-    openModal();
+    const serviceName = btn.getAttribute('data-service');
+    const msg = serviceName 
+      ? `Hello Dr. Vimi Padhiyar, I would like to book an appointment for ${serviceName}.`
+      : 'Hello Dr. Vimi Padhiyar, I would like to book a consultation appointment.';
+    openWhatsAppDirect(msg);
   }));
 
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closeModal();
-    }
-  });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  }
 
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const patientName = document.getElementById('patientName').value || 'Patient';
+      const patientName = document.getElementById('patientName')?.value?.trim() || '';
+      const patientPhone = document.getElementById('patientPhone')?.value?.trim() || '';
+      const patientEmail = document.getElementById('patientEmail')?.value?.trim() || '';
+      const treatmentSelect = document.getElementById('treatmentCategory');
+      const treatment = treatmentSelect && treatmentSelect.selectedIndex > 0 ? treatmentSelect.options[treatmentSelect.selectedIndex].text : '';
+      const appointmentDate = document.getElementById('appointmentDate')?.value?.trim() || '';
+      const patientNotes = document.getElementById('patientNotes')?.value?.trim() || '';
+
+      let text = 'Hello Dr. Vimi Padhiyar, I would like to book a consultation appointment.';
+      if (patientName) text += `\nName: ${patientName}`;
+      if (patientPhone) text += `\nPhone: ${patientPhone}`;
+      if (patientEmail) text += `\nEmail: ${patientEmail}`;
+      if (treatment) text += `\nConcern: ${treatment}`;
+      if (appointmentDate) text += `\nPreferred Date: ${appointmentDate}`;
+      if (patientNotes) text += `\nNotes: ${patientNotes}`;
+
       closeModal();
       form.reset();
-      showToast(`Thank you, ${patientName}! Your consultation appointment request has been scheduled.`);
+      showToast(`Thank you, ${patientName || 'Patient'}! Redirecting to WhatsApp to complete your booking.`);
+      openWhatsAppDirect(text);
     });
   }
 
@@ -428,8 +465,8 @@ function initScrollRevealAnimations() {
     });
   }, {
     root: null,
-    threshold: 0.05,
-    rootMargin: '0px 0px -10px 0px'
+    threshold: 0.02,
+    rootMargin: '0px 0px 40px 0px' // Pre-triggers 40px ahead of viewport for zero mobile lag
   });
 
   reveals.forEach(el => observer.observe(el));
@@ -466,12 +503,14 @@ function initServicesFilter() {
 
       if (matchesCategory && matchesSearch) {
         card.style.display = 'flex';
+        card.classList.add('is-revealed');
         card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
+        card.style.transform = 'translate3d(0, 0, 0)';
         visibleCount++;
       } else {
         card.style.display = 'none';
         card.style.opacity = '0';
+        card.style.transform = 'translate3d(0, 8px, 0)';
       }
     });
 
